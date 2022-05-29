@@ -1,0 +1,287 @@
+/*
+"Be aware of the many CSS selectors available: https://www.w3schools.com/cssref/css_selectors.asp.
+That way, you can intuitively pick the right one for any context."
+*/
+
+/* For device widths: https://viewportsizer.com/devices/. */
+
+/* Remember "tab test" for accessibility. */
+
+/************************************************************
+********** For Mobile/Narrow Viewport **********
+************************************************************/
+
+/* Always use this, as Brian Holt advises. It makes the size ("width", for example) of every element equal to the element's content + its padding + its border, and not inclusive of margin of course. */
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #69359C;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #222222;
+}
+
+/****************************************
+header
+****************************************/
+
+header {
+    color: #222222;
+    background-color: #69359C;
+    letter-spacing: 1px;
+}
+
+.name-and-menu-icons-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 0 34px;
+}
+
+.name-at-top {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.name-at-top::selection {
+    background-color: #f6f6ff;
+}
+
+.menu-icon-btn {
+    background-color: #69359C;
+    align-self: center; /* QQQ: need here? */
+    cursor: pointer;
+    padding: 0;
+    margin-top: 5px;
+    border-width: 0;
+}
+
+/* This is here to remove the default outline that appears upon clicking the button. But removing this causes a problem: It also removes the line that appears (and should appear, for accessibility reasons) when the button is found with "tab". So there needs to be a visual indication of when the button is tabbed on. To solve this, there's ":focus-visible" (used just below). Reference the following link for more info on ":focus-visible" if needed: https://css-tricks.com/almanac/selectors/f/focus-visible/. */
+.menu-icon-btn:focus {
+    outline: none;
+}
+
+.menu-icon-btn:focus-visible {
+    border: 2px solid #f6f6ff; /* I made this a "border" instead of an "outline" just so that I could give it a border-radius (there's no way to create a similar effect, I believe, with outline). */
+    border-radius: 5px;
+}
+
+.icon-hamburger {
+    width: 29px;
+    height: 19.3px;
+}
+
+.is-hidden {
+    display: none; /* NOTE: Setting this is preferable to "visibility: hidden" for a program, because, if you use the latter instead, then when the menu is hidden and the user is tabbing through the page, there will be several tabs that are "lost"/invisible. */
+}
+
+.menu-items-ul {
+    list-style-type: none;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 0 34px 0;
+}
+
+.menu-items-ul a {
+    color: #222222; /* QQQ: I have to put this here even though <header> (the great grandparent of this element) has the same value for 'color'. Why? */
+    text-decoration: none;
+    padding: 15px 0;
+
+    /* QQQ: I needed the <a> to appear as wide as its parent (the <li>). I got this solution from stackoverflow. Why does it work? */
+    display: flex;
+    justify-content: center;
+}
+
+.menu-items-ul a:hover {
+    background-color: #f6f6ff;  
+    text-decoration: underline;
+}
+
+.menu-items-ul a:focus {
+    outline: none;
+}
+
+.menu-items-ul a:focus-visible {
+    border: 2px solid #f6f6ff;
+    border-radius: 5px;
+}
+
+/****************************************
+main
+****************************************/
+
+main {
+    padding: 34px;
+}
+
+.pic-and-content-div {
+    width: 100%;
+    border-radius: 10px;
+    /* NOTE: What's below is the same shadowing as is on 'section', but I didn't want to make .pic-and-content-div a 'section' for other styling reasons. */
+    box-shadow:
+        /* top: */
+            0px -14px 11px -7px rgba(0, 0, 0, 0.3),
+        /* left and bottom: */
+            -3px 20px 35px 0px rgba(0, 0, 0, 0.03),
+            -4px 7px 8px 0px rgba(0, 0, 0, 0.2),
+        /* right and bottom: */
+            3px 35px 35px 0px rgba(0, 0, 0, 0.03),
+        /* bottom (and a bit of right): */
+            3px 35px 20px 0px rgba(0, 0, 0, 0.2),
+        /* bottom: */
+            2px 10px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+.pic-div {
+    display: block;
+    width: 100%;
+    height: 369px; /* QQQ: Change? This is the same height as the default (when set to 100% width) in the Ff smallest viewport. */
+    border-radius: 10px 10px 0 0;
+    background-image: url(../../assets/img/profile_pic_2.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.content-div {
+    background-color: #f6f6ff;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 68px; /* NOTE: This is double the 34 padding I'm using many places. */
+    padding: 28px 34px;
+}
+
+.content-div p {
+    margin: 0;
+}
+
+section {
+    background-color: #f6f6ff;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 68px; /* NOTE: This is double the 34 padding I'm using many places. */
+    padding: 25px 34px 34px 34px;
+    box-shadow:
+        /* top: */
+            0px -14px 11px -7px rgba(0, 0, 0, 0.3),
+        /* left and bottom: */
+            -3px 20px 35px 0px rgba(0, 0, 0, 0.03),
+            -4px 7px 8px 0px rgba(0, 0, 0, 0.2),
+        /* right and bottom: */
+            3px 35px 35px 0px rgba(0, 0, 0, 0.03),
+        /* bottom (and a bit of right): */
+            3px 35px 20px 0px rgba(0, 0, 0, 0.2),
+        /* bottom: */
+            2px 10px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+.menu-item-heading {
+    color: #69359C;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.menu-item-heading::selection {
+    background-color: #222222;
+}
+
+section p {
+    margin-top: 10px;
+}
+
+.div-for-back-to-top-btn {
+    text-align: right;
+}
+
+.back-to-top-btn {
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    border-width: 0;
+    padding: 7px 12px;
+    border-radius: 6px;
+    background-color: #69359C;
+    color: #f6f6ff;
+    letter-spacing: 1px;
+}
+
+/****************************************
+footer
+****************************************/
+
+/************************************************************
+********** For Desktop/Wide Viewport **********
+************************************************************/
+  
+@media screen and (min-width: 768px) { /* starting at width of 768px, the code below (which is only for CHANGES to the above code) will take effect. */
+
+    /****************************************
+    header
+    ****************************************/
+
+    /****************************************
+    main
+    ****************************************/        
+
+    /****************************************
+    footer
+    ****************************************/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* KEEP THIS AS A REFERENCE:
+
+parent/container/row {
+    display: flex;    mandatory 
+    flex-direction: ;    row (default) | row-reverse | column | column-reverse 
+    justify-content: ;    flex-start (default) | flex-end | center | space-between | space-around | space-evenly 
+    align-items: ;    flex-start | flex-end | center | (baseline) | stretch (default) 
+    flex-wrap: ;    nowrap (default) | wrap | wrap-reverse 
+    align-content: ;    flex-start | flex-end | center | space-between | space-around | stretch (default)
+
+    note on 'align-content' (paraphrased from flexboxfroggy.com): 'align-content' determines the spacing between lines, while 'align-items' determines how the items as a whole are aligned within the container; when there is only one line, 'align-content' has no effect
+
+    flex-flow: ;    this is shorthand for 'flex-direction: ;' and 'flex-wrap: ;' (e.g., 'flex-flow: column wrap;')
+}
+
+child/item/cell {
+    align-self: ;    flex-start | flex-end | center | (baseline) | stretch (default)
+    flex-grow: ;    0 is default (Jen Kramer: This is very hard to understand)
+    flex-shrink: ;    1 is default (Jen Kramer: This is very hard to understand)
+    flex-basis: ;    auto is default (Jen Kramer: This is basically the 'width' property--never use with Flexbox--but with some flexibility you can't control)
+    order: ;    0 is default
+
+    flex: [flex-grow number, flex-shrink number, flex-basis number];    this is a way (instead of using % outside of Flexbox) to set relative sizes of elements. (This is how I THOUGHT 'flex-grow' worked.) An example is 'flex: 1 1 0;' (the shorthand for which is the oft-used 'flex: 1;').
+
+    margin-top: auto;    this puts the element at the bottom.
+}
+
+*/
