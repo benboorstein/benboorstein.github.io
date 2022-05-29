@@ -155,7 +155,6 @@ main {
     background-color: #f6f6ff;
     width: 100%;
     border-radius: 0 0 10px 10px;
-    margin-bottom: 68px; /* NOTE: This is double the 34 padding I'm using many places. */
     padding: 28px 34px;
 }
 
@@ -163,11 +162,23 @@ main {
     margin: 0;
 }
 
+.space-between-1 {
+    /* NOTE: 33px + 1px = 34px, which is the margin or padding being used in various places. */
+    height: 1px;
+    margin-top: 33px;
+}
+
+.space-between-2 {
+    /* NOTE: 33px + 1px = 34px, which is the margin or padding being used in various places. */
+    height: 1px;
+    margin-top: 33px;
+}
+
 section {
     background-color: #f6f6ff;
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 68px; /* NOTE: This is double the 34 padding I'm using many places. */
+    /* margin-bottom: 68px;*/ /* NOTE: This is double the 34 padding I'm using many places. */
     padding: 25px 34px 34px 34px;
     box-shadow:
         /* top: */
