@@ -47,7 +47,7 @@ header {
 }
 
 .name-at-top {
-    font-size: 32px;
+    font-size: 23px; /*was 32*/
     font-weight: 600;
 }
 
