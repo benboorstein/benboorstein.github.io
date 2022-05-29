@@ -43,11 +43,11 @@ header {
 .name-and-menu-icons-div {
     display: flex;
     justify-content: space-between;
-    padding: 0 40px 0 34px;
+    padding: 6px 34px 6px 30px;
 }
 
 .name-at-top {
-    font-size: 23px; /*was 32*/
+    font-size: 23px;
     font-weight: 600;
 }
 
@@ -74,10 +74,10 @@ header {
     border-radius: 5px;
 }
 
-.icon-hamburger {
-    width: 29px;
-    height: 19.3px;
-}
+/* .icon-hamburger {
+    width: 24px;
+    height: 16px;
+} */
 
 .is-hidden {
     display: none; /* NOTE: Setting this is preferable to "visibility: hidden" for a program, because, if you use the latter instead, then when the menu is hidden and the user is tabbing through the page, there will be several tabs that are "lost"/invisible. */
@@ -86,9 +86,9 @@ header {
 .menu-items-ul {
     list-style-type: none;
     margin: 0;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 600;
-    padding: 0 0 34px 0;
+    padding: 0 0 30px 0;
 }
 
 .menu-items-ul a {
@@ -144,7 +144,7 @@ main {
 .pic-div {
     display: block;
     width: 100%;
-    height: 369px; /* QQQ: Change? This is the same height as the default (when set to 100% width) in the Ff smallest viewport. */
+    height: 270px;/* QQQ: Change? This is the height Robert used for his. */
     border-radius: 10px 10px 0 0;
     background-image: url(../../assets/img/profile_pic_2.jpg);
     background-position: 50% 50%;

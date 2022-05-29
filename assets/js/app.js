@@ -26,14 +26,14 @@ function toggleThem() {
         document.querySelector('.menu-items-ul').classList.remove('is-hidden') // ...show the menu and...
         document.querySelector('.icon-hamburger').classList.add('is-hidden') // ...hide the hamburger and...
         document.querySelector('.icon-close').classList.remove('is-hidden') // ...show the X.
-        document.querySelector('.icon-close').style.width = '23px'
-        document.querySelector('.icon-close').style.height = '23px'
+        // document.querySelector('.icon-close').style.width = '20px'
+        // document.querySelector('.icon-close').style.height = '20px'
     } else { // Otherwise...
         document.querySelector('.menu-items-ul').classList.add('is-hidden') // ...hide the menu and...
         document.querySelector('.icon-hamburger').classList.remove('is-hidden') // ...show the hamburger and...
         document.querySelector('.icon-close').classList.add('is-hidden') // ...hide the X.
-        document.querySelector('.icon-hamburger').style.width = '29px'
-        document.querySelector('.icon-hamburger').style.height = '19.3px'
+        // document.querySelector('.icon-hamburger').style.width = '24px'
+        // document.querySelector('.icon-hamburger').style.height = '16px'
     } 
 }
 
