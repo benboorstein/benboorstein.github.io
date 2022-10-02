@@ -1,14 +1,11 @@
-/*
-"Be aware of the many CSS selectors available: https://www.w3schools.com/cssref/css_selectors.asp.
-That way, you can intuitively pick the right one for any context."
-*/
+/* CSS selectors available: https://www.w3schools.com/cssref/css_selectors.asp. */
 
 /* For device widths: https://viewportsizer.com/devices/. */
 
 /* Remember "tab test" for accessibility. */
 
 /************************************************************
-********** For Mobile/Narrow Viewport **********
+********** Viewport 1 of 4 (default code) **********
 ************************************************************/
 
 /* Always use this, as Brian Holt advises. It makes the size ("width", for example) of every element equal to the element's content + its padding + its border, and not inclusive of margin of course. */
@@ -27,6 +24,8 @@ html, body {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     background-color: #222222;
 }
 
@@ -57,7 +56,7 @@ header {
 
 .menu-icon-btn {
     background-color: #69359C;
-    align-self: center; /* QQQ: need here? */
+    align-self: center; /* Is this needed? */
     cursor: pointer;
     padding: 0;
     margin-top: 5px;
@@ -74,17 +73,15 @@ header {
     border-radius: 5px;
 }
 
-/* .icon-hamburger {
-    width: 24px;
-    height: 16px;
-} */
-
 .is-hidden {
-    display: none; /* NOTE: Setting this is preferable to "visibility: hidden" for a program, because, if you use the latter instead, then when the menu is hidden and the user is tabbing through the page, there will be several tabs that are "lost"/invisible. */
+    display: none; /* Setting this is preferable to "visibility: hidden" for a program, because, if you use the latter instead, then when the menu is hidden and the user is tabbing through the page, there will be several tabs that are "lost"/invisible. */
+}
+
+ul {
+    list-style-type: none;
 }
 
 .menu-items-ul {
-    list-style-type: none;
     margin: 0;
     font-size: 19px;
     font-weight: 600;
@@ -92,11 +89,11 @@ header {
 }
 
 .menu-items-ul a {
-    color: #222222; /* QQQ: I have to put this here even though <header> (the great grandparent of this element) has the same value for 'color'. Why? */
+    color: #222222;
     text-decoration: none;
     padding: 15px 0;
 
-    /* QQQ: I needed the <a> to appear as wide as its parent (the <li>). I got this solution from stackoverflow. Why does it work? */
+    /* I needed the <a> to appear as wide as its parent (the <li>). I got this solution from stackoverflow. Why does it work? */
     display: flex;
     justify-content: center;
 }
@@ -120,13 +117,16 @@ main
 ****************************************/
 
 main {
-    padding: 34px;
+    padding: 34px 34px 0 34px;
+    margin-top: 34px;
 }
 
 .pic-and-content-div {
     width: 100%;
+    max-width: 508px;
+    margin: auto; /* This is needed to center '.pic-and-content-div' once the width of '.pic-and-content-div' reaches what 'max-width' (in the line just above) is set to. */
     border-radius: 10px;
-    /* NOTE: What's below is the same shadowing as is on 'section', but I didn't want to make .pic-and-content-div a 'section' for other styling reasons. */
+    /* What's below is the same shadowing as is on 'section', but I didn't want to make .pic-and-content-div a 'section' for other styling reasons. */
     box-shadow:
         /* top: */
             0px -14px 11px -7px rgba(0, 0, 0, 0.3),
@@ -144,41 +144,59 @@ main {
 .pic-div {
     display: block;
     width: 100%;
-    height: 270px;/* QQQ: Change? This is the height Robert used for his. */
-    border-radius: 10px 10px 0 0;
-    background-image: url(../../assets/img/profile_pic_2.jpg);
-    background-position: 50% 50%;
+    height: 300px;
+    border-radius: 10px;
+    background-image: url(../../assets/img/my_website_pic.jpg);
+    background-position: 22% 0%;
     background-size: cover;
 }
 
 .content-div {
+    color: #000000;
     background-color: #f6f6ff;
     width: 100%;
     border-radius: 0 0 10px 10px;
-    padding: 28px 34px;
+    padding: 18px 34px;
 }
 
 .content-div p {
+    text-align: center;
+    letter-spacing: 0.5px;
     margin: 0;
+    line-height: 42px;
+    font-style: italic;
+}
+
+.content-div p span {
+    color: #69359C;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.content-div p span::selection {
+    background-color: #222222;
 }
 
 .space-between-1 {
-    /* NOTE: 33px + 1px = 34px, which is the margin or padding being used in various places. */
+    /* 33px + 1px = 34px, which is the margin or padding being used in various places. */
     height: 1px;
     margin-top: 33px;
 }
 
 .space-between-2 {
-    /* NOTE: 33px + 1px = 34px, which is the margin or padding being used in various places. */
+    /* 33px + 1px = 34px, which is the margin or padding being used in various places. */
     height: 1px;
     margin-top: 33px;
 }
 
 section {
+    letter-spacing: 0.5px; /* Has to be consistent with '.content-div p'. */
+    color: #000000;
     background-color: #f6f6ff;
     width: 100%;
+    max-width: 508px;
+    margin: auto; /* This is needed to center <section> once the width of <section> reaches what 'max-width' (in the line just above) is set to. */
     border-radius: 10px;
-    /* margin-bottom: 68px;*/ /* NOTE: This is double the 34 padding I'm using many places. */
     padding: 25px 34px 34px 34px;
     box-shadow:
         /* top: */
@@ -197,7 +215,8 @@ section {
 .menu-item-heading {
     color: #69359C;
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 600;
+    font-style: italic;
     margin: 0;
 }
 
@@ -205,48 +224,349 @@ section {
     background-color: #222222;
 }
 
-section p {
-    margin-top: 10px;
-}
-
 .div-for-back-to-top-btn {
     text-align: right;
+    margin-top: 36px;
 }
 
 .back-to-top-btn {
+    background-color: #f6f6ff;
+    color: #69359C;
     font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0;
     cursor: pointer;
     border-width: 0;
-    padding: 7px 12px;
-    border-radius: 6px;
-    background-color: #69359C;
+    letter-spacing: 0.5px;
+}
+
+.back-to-top-btn:hover {
+    font-style: italic;
+}
+
+.back-to-top-btn::selection {
+    background-color: #222222;
+}
+
+.about-section p, .contact-section p {
+    margin-top: 28px;
+}
+
+.work-section-subsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.work-section-subsection h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.work-section-subsection ul {
+    margin: 0;
+}
+
+.projects-posts-exercises-subheading {
+    margin-top: 28px;
+}
+
+.projects-posts-exercises-linked-icons-ul, .places-I-practice-linked-icons-ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+.projects-posts-exercises-linked-icon, .places-I-practice-linked-icon {
+    width: 40px;
+    border-radius: 5px;
+}
+
+.my-favorites-h4 {
+    font-size: 16.5px;
+    font-weight: 400;
+    margin-bottom: 2.5px;
+}
+
+.my-favorites-links-ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.my-favorites-links-ul li {
+    margin-top: 6px;
+}
+
+.my-favorites-links-ul a {
+    color: #69359C;
+    text-decoration: none;
+}
+
+.my-favorites-links-ul a:hover {
+    text-decoration: underline;
+}
+
+.my-favorites-links-ul a::selection {
+    background-color: #222222;
+}
+
+.view-site-link {
+    font-size: 13.5px;
+    font-style: italic;
+}
+
+.my-favorite-projects-h4 {
+    margin-top: 15px;
+}
+
+.my-favorite-posts-h4, .my-favorite-exercises-h4 {
+    margin-top: 17px;
+}
+
+.places-I-practice-subheading {
+    margin-top: 30px;
+}
+
+.my-resume-subheading {
+    margin-top: 33px;
+}
+
+.resume-btn {
+    background-color: #f6f6ff;
+    color: #69359C;
+    border: #69359C 2px solid;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0;
+    padding: 7px 40px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    border-radius: 7px;
+}
+
+.resume-btn:hover {
     color: #f6f6ff;
-    letter-spacing: 1px;
+    background-color: #69359C;
+    text-decoration: underline;
+}
+
+.resume-btn::selection {
+    background-color: #222222;
+}
+
+.email-and-phone {
+    text-align: center;
 }
 
 /****************************************
 footer
 ****************************************/
 
+footer {
+    padding: 54px 34px 56px 34px;
+    background-color: #69359C;
+    letter-spacing: 1px;
+}
+
+footer p {
+    color: #222222;
+    margin: 0;
+    margin-bottom: 27px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+footer p::selection {
+    background-color: #f6f6ff;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links-ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 46px;
+    row-gap: 23px;
+}
+
+.footer-link-icon {
+    width: 46px;
+    border-radius: 5px;
+}
+
+.footer-menu-items-ul {
+    column-gap: 30px;
+    row-gap: 15px;
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer-menu-items-ul a {
+    color: #222222;
+    text-decoration: none;
+}
+
+.footer-menu-items-ul a:hover {
+    text-decoration: underline;
+}
+
+.footer-menu-items-ul a:focus {
+    outline: none;
+}
+
+.footer-menu-items-ul a:focus-visible {
+    border: 2px solid #f6f6ff;
+    border-radius: 5px;
+}
+
 /************************************************************
-********** For Desktop/Wide Viewport **********
+********** Viewport 2 of 4 **********
 ************************************************************/
-  
-@media screen and (min-width: 768px) { /* starting at width of 768px, the code below (which is only for CHANGES to the above code) will take effect. */
+
+@media screen and (min-width: 845px) { /* starting at width of 845px, the code below (which is only for CHANGES to the above code) will take effect. */
 
     /****************************************
     header
     ****************************************/
 
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .name-and-menu-icons-div {
+        display: block;
+        padding: 0;
+    }
+
+    .name-at-top {
+        font-size: 26px;
+        padding: 6px 0 6px 34px; /* The left padding here must be exactly double the right-and-left padding number of '.menu-items-ul a'. */
+    }
+
+    .menu-icon-btn {
+        display: none;
+    }
+
+    .menu-items-ul {
+        padding-right: 19px; /* This number must be 2 greater than the right-and-left padding number of '.menu-items-ul a'. */
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-items-ul a {
+        display: block;
+        padding: 28.5px 17px; /* These numbers, especially the 28.5, are precise. (The 28.5 is the top-and-bottom padding at which the hovering white covers the whole height of <header> without expanding the height of <header>.) */
+    }
+
     /****************************************
     main
-    ****************************************/        
+    ****************************************/
 
     /****************************************
     footer
     ****************************************/
 
 }
+
+/************************************************************
+********** Viewport 3 of 4 **********
+************************************************************/
+
+@media screen and (min-width: 990px) { /* starting at width of 990px, the code below (which is only for CHANGES to the above code) will take effect. */
+
+    /****************************************
+    header
+    ****************************************/
+    
+    /****************************************
+    main
+    ****************************************/
+    
+    .pic-and-content-div {
+        min-width: 53%;
+    }
+
+    .pic-div {
+        background-image: url(../../assets/img/my_website_pic--for_wider_viewport.jpg);
+        background-position: 33% 0%;
+    }
+
+    section {
+        min-width: 53%;
+    }
+
+    /****************************************
+    footer
+    ****************************************/
+
+    .footer-menu-items-ul {
+        column-gap: 40px;
+        font-size: 17px;
+    }
+}
+
+/************************************************************
+********** Viewport 4 of 4 **********
+************************************************************/
+
+@media screen and (min-width: 1310px) { /* starting at width of 1310px, the code below (which is only for CHANGES to the above code) will take effect. */
+
+    /****************************************
+    header
+    ****************************************/
+
+    .name-at-top {
+        font-size: 28px;
+        padding-left: 60px; /* This number must be exactly triple the right-and-left padding number of '.menu-items-ul a'. */
+    }
+
+    .menu-icon-btn {
+        display: none;
+    }
+
+    .menu-items-ul {
+        font-size: 20px;
+        padding-right: 42px; /* This number must be 2 greater than double the right-and-left padding number of '.menu-items-ul a'. */
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-items-ul a {
+        display: block;
+        padding: 30px 20px; /* These numbers, especially the 30, are precise. (The 30 is the top-and-bottom padding at which the hovering white covers the whole height of <header> without expanding the height of <header>.) */
+    }
+
+    /****************************************
+    main
+    ****************************************/
+
+    /****************************************
+    footer
+    ****************************************/
+
+}
+
+
+
+
+
+    
 
 
 
@@ -292,7 +612,7 @@ child/item/cell {
 
     flex: [flex-grow number, flex-shrink number, flex-basis number];    this is a way (instead of using % outside of Flexbox) to set relative sizes of elements. (This is how I THOUGHT 'flex-grow' worked.) An example is 'flex: 1 1 0;' (the shorthand for which is the oft-used 'flex: 1;').
 
-    margin-top: auto;    this puts the element at the bottom.
+    margin-top: auto;    this puts the element at the bottom (assuming 'flex-direction' is set to 'column').
 }
 
 */

@@ -5,22 +5,26 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/profile_pic_2.jpg"> <!-- NOTE: change the photo to the actual main photo I'll be using, I think...or design something with the site's theme colors. -->
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/my_website_pic--for_favicon.jpg">
 
-        <!-- All of the lines just below were verbatim pasted from fonts.google.com. Remember how this works re: font weights, etc. -->
+        <!-- pasted verbatim from fonts.google.com -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="assets/css/style.css"> <!--always put this line after fonts because of how things load-->
-        <!-- "./" means "from right here". "../" means "go up a level". And, from a site:
-        Here is all you need to know about relative file paths:
-            Starting with “/” returns to the root directory and starts there
-            Starting with “../” moves one directory backwards and starts there
-            Starting with “../../” moves two directories backwards and starts there (and so on…)
-            To move forward, just start with the first subdirectory and keep moving forward -->
+        <link rel="stylesheet" href="assets/css/style.css"> <!-- always put this line after fonts because of how things load -->
+        <!--
+            "./" means "from right here"
+            "../" means "go up a level"
+            From a site: All you need to know about relative file paths:
+                - “/” returns to the root directory and starts there
+                - “../” moves one directory backwards and starts there
+                - “../../” moves two directories backwards and starts there
+                - (and so on...)
+                - To move forward, just start with the first subdirectory and keep moving forward
+        -->
 
-        <title>Ben Boorstein's Portfolio</title>
+        <title>Ben Boorstein</title>
     </head>
     <body>
         <header>
@@ -40,19 +44,34 @@
         <main>
             <div class="pic-and-content-div">
                 <div class="pic-div"></div>
-                <div class="content-div">
+                <!-- Keep this:
+                    If you decide to get rid of the content box under my pic, just...
+                    ...comment out (in the html) '.content-div'
+                    ...change (in the css) the border-radius of '.pic-div' from '10px 10px 0 0;' to '10px;'
+                -->
+                <!-- <div class="content-div">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        Hi, I'm Ben.
+                        <br>
+                        Thank you for visiting my page.
+                        <br>
+                        <span>Please explore!</span>
                     </p>
-                </div>
+                </div> -->
             </div>
             <!-- NOTE: The reason for these two divs is because of where I want each section element to be positioned on the webpage when the user clicks the section's corresponding menu item. -->
             <div class="space-between-1" id="about"></div>
             <div class="space-between-2"></div>
-            <section>
+            <section class="about-section">
                 <h2 class="menu-item-heading">About</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    I live in South Carolina with my wife and daughter.
+                    <br><br>
+                    Over the last couple years, as time has allowed, I've been learning front-end web development, specifically HTML, CSS, JavaScript, and Vue.
+                    <br><br>
+                    Aside from programming, I like to spend time with my family (especially working in our garden, swimming in the lake, and walking in the woods), practice drums, practice catch wrestling, exercise at the gym, eat dark chocolate, and worship the sun (ideally while eating dark chocolate).
+                    <br><br>
+                    Just kidding about that last one. Sort of.
                 </p>
                 <div class="div-for-back-to-top-btn">
                     <button class="back-to-top-btn">Back to top</button>
@@ -61,11 +80,176 @@
             <!-- NOTE: The reason for these two divs is because of where I want each section element to be positioned on the webpage when the user clicks the section's corresponding menu item. -->
             <div class="space-between-1" id="work"></div>
             <div class="space-between-2"></div>
-            <section>
+            <section class="work-section">
                 <h2 class="menu-item-heading">Work</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                <!-- NOTE: For most of the below icons, I used https://fontawesome.com/icons. -->
+                <div class="work-section-subsection">
+                    <h3 class="projects-posts-exercises-subheading">Projects, posts, and exercises:</h3>
+                    <ul class="projects-posts-exercises-linked-icons-ul">
+                        <li>
+                            <a href="https://github.com/benboorstein" target="_blank">
+                                <img class="projects-posts-exercises-linked-icon" src="./assets/img/icon-github.svg" alt="https://github.com/benboorstein">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://vercel.com/benboorstein" target="_blank">
+                                <img class="projects-posts-exercises-linked-icon" src="./assets/img/icon-vercel.png" alt="https://vercel.com/benboorstein">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dev.to/benboorstein" target="_blank">
+                                <img class="projects-posts-exercises-linked-icon" src="./assets/img/icon-dev.svg" alt="https://dev.to/benboorstein">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://codepen.io/benboorstein" target="_blank">
+                                <img class="projects-posts-exercises-linked-icon" src="./assets/img/icon-codepen.svg" alt="https://codepen.io/benboorstein">
+                            </a>
+                        </li>
+                    </ul>
+                    <h4 class="my-favorites-h4 my-favorite-projects-h4">My favorite projects:</h4>
+                    <ul class="my-favorites-links-ul">
+                        <li>
+                            <a href="https://github.com/benboorstein/Frontend-Mentor-Project-SEVENTEEN" target="_blank">
+                                Working with Vue.js, JSON, and CSS Grid
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://frontend-mentor-project-seventeen.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://github.com/benboorstein/Frontend-Mentor-Project-SEVEN" target="_blank">
+                                Working with Vue.js, JSON, and a filter
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://frontend-mentor-project-seven.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://github.com/benboorstein/Frontend-Mentor-Project-THIRTEEN" target="_blank">
+                                Working with vanilla JavaScript, modals, and a progress bar
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://frontend-mentor-project-thirteen.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://github.com/benboorstein/Frontend-Mentor-Project-EIGHTEEN" target="_blank">
+                                Working with Vue.js
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://frontend-mentor-project-eighteen.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://github.com/benboorstein/Frontend-Mentor-Project-NINETEEN" target="_blank">
+                                Working with Vue.js, a slider, and a toggle
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://frontend-mentor-project-nineteen.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                    </ul>
+                    <h4 class="my-favorites-h4 my-favorite-posts-h4">My favorite posts:</h4>
+                    <ul class="my-favorites-links-ul">
+                        <li>
+                            <a href="https://dev.to/benboorstein/20-array-methods-25pc" target="_blank">
+                                Demonstrating twenty array methods
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dev.to/benboorstein/advent-of-code-2018-day-2-part-2-solution-and-explanation-1j9e" target="_blank">
+                                Explaining an algorithmic solution
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dev.to/benboorstein/some-recursion-practice-notes-217f" target="_blank">
+                                Exploring various recursion examples
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dev.to/benboorstein/freecodecamp-recursion-example-explained-390b" target="_blank">
+                                Charting a tricky recursion example
+                            </a>
+                        </li>
+                    </ul>
+                    <h4 class="my-favorites-h4 my-favorite-exercises-h4">My favorite exercises:</h4>
+                    <ul class="my-favorites-links-ul">
+                        <li>
+                            <a href="https://github.com/benboorstein/Hangman-with-Vue-Version-TWO" target="_blank">
+                                Working with Vue.js
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://hangman-with-vue-version-two.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://github.com/benboorstein/Rock-Paper-Scissors-with-Vue-Version-TWO" target="_blank">
+                                Working with Vue.js
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://rock-paper-scissors-with-vue-version-two.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://github.com/benboorstein/API-Challenges/tree/main/API_Challenge_Three" target="_blank">
+                                Working with vanilla JavaScript and an API
+                            </a>
+                            <br>
+                            <div class="view-site-link">
+                                ~ <a href="https://api-challenges-api-challenge-three.vercel.app/" target="_blank">view the site</a> ~
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-section-subsection">
+                    <h3 class="places-I-practice-subheading">Some places I practice:</h3>
+                    <ul class="places-I-practice-linked-icons-ul">
+                        <li>
+                            <a href="https://www.freecodecamp.org/" target="_blank">
+                                <img class="places-I-practice-linked-icon" src="./assets/img/icon-free-code-camp.jpeg" alt="https://www.freecodecamp.org/">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.frontendmentor.io/" target="_blank">
+                                <img class="places-I-practice-linked-icon" src="./assets/img/icon-frontendmentor.jpeg" alt="https://www.frontendmentor.io/">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://jamstack-attack.herokuapp.com/" target="_blank">
+                                <img class="places-I-practice-linked-icon" src="./assets/img/icon-jamstack-attack.png" alt="https://jamstack-attack.herokuapp.com/">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://frontendmasters.com/" target="_blank">
+                                <img class="places-I-practice-linked-icon" src="./assets/img/icon-frontendmasters.ico" alt="https://frontendmasters.com/">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://adventofcode.com/" target="_blank">
+                                <img class="places-I-practice-linked-icon" src="./assets/img/icon-adventofcode.ico" alt="https://adventofcode.com/">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://csbin.io/" target="_blank">
+                                <img class="places-I-practice-linked-icon" src="./assets/img/icon-csbin.ico" alt="http://csbin.io/">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-section-subsection">
+                    <h3 class="my-resume-subheading">My resume:</h3>
+                    <a href="https://www.dropbox.com/s/6ufxagbsz7hi1l2/Ben_Boorstein_Resume.pdf?dl=0" target="_blank">
+                        <button class="resume-btn">View resume</button>
+                    </a>
+                </div>
                 <div class="div-for-back-to-top-btn">
                     <button class="back-to-top-btn">Back to top</button>
                 </div>
@@ -73,10 +257,12 @@
             <!-- NOTE: The reason for these two divs is because of where I want each section element to be positioned on the webpage when the user clicks the section's corresponding menu item. -->
             <div class="space-between-1" id="contact"></div>
             <div class="space-between-2"></div>
-            <section>
+            <section class="contact-section">
                 <h2 class="menu-item-heading">Contact</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p class="email-and-phone">
+                    benboorstein@gmail.com
+                    <br><br>
+                    864-325-4309
                 </p>
                 <div class="div-for-back-to-top-btn">
                     <button class="back-to-top-btn">Back to top</button>
@@ -87,7 +273,24 @@
             <div class="space-between-2"></div>    
         </main>
         <footer>
-
+            <p>You can also find me here:</p>
+            <ul class="footer-links-ul">
+                <li>
+                    <a href="https://www.linkedin.com/in/benboorstein/" target="_blank">
+                        <img class="footer-link-icon" src="./assets/img/icon-linkedin.svg" alt="https://www.linkedin.com/in/benboorstein/">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://angel.co/benboorstein" target="_blank">
+                        <img class="footer-link-icon" src="./assets/img/icon-angellist.svg" alt="https://angel.co/benboorstein">
+                    </a>
+                </li>
+            </ul>
+            <ul class="footer-menu-items-ul">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li> 
+            </ul>
         </footer>
 
         <script src="./assets/js/app.js"></script>
