@@ -16,4 +16,13 @@ function toggleThem() {
 // upon click of any .back-to-top-btn, go back to top
 const backToTopBtns = document.querySelectorAll('.back-to-top-btn')
 backToTopBtns.forEach(btn => { btn.addEventListener('click', goBackToTop) })
-function goBackToTop() { window.scrollTo(0,0) }
+function goBackToTop() {
+    // // use this for a 'jump' scroll
+    // window.scrollTo(0,0)
+
+    // use this for a 'smooth' scroll
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+}
